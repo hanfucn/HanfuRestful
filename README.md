@@ -5,7 +5,7 @@
 
 ##### 然后回到自己的仓库，选择SSH，如图
 
-![Fork](/.remarks/Clone.png)
+![Clone](/.remarks/Clone.png)
 
 ##### 将代码克隆到本地
 
@@ -22,6 +22,10 @@ git add .
 git commit -m "add Fork"
 git push
 ```
+
+##### Pull requests提交代码到dev分支
+
+![Pull requests](/.remarks/Pull.png)
 
 [关于如何Fork，如何将代码推送到我这边来。请看这里](https://www.cnblogs.com/southday/p/10010876.html)
 
