@@ -13,12 +13,15 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import mixins, views
 from rest_framework.response import Response
 
 from huaxiaRestful import settings
+
+from django.views.static import serve
 
 
 class AuthIndex(mixins.ListModelMixin, views.APIView):
@@ -55,7 +58,7 @@ class AuthIndex(mixins.ListModelMixin, views.APIView):
                 item: '{}{}/'.format(self.get_host_path(), item),
             })
         return Response({
-            'auth': context,
+            'account': context,
             'app': app
         })
 
@@ -63,7 +66,9 @@ class AuthIndex(mixins.ListModelMixin, views.APIView):
 
 
 urlpatterns = [
-    path('', AuthIndex.as_view(), name='index')
+    path('', AuthIndex.as_view(), name='index'),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url('^media/(?P<path>.*)$', serve, {"document_root": settings.MEDIA_ROOT})
 ]
 
 '''

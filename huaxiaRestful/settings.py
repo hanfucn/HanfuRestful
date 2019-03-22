@@ -33,6 +33,7 @@ AUTH_USER_MODEL = 'account.User'
 # 提供RESTFUL支持的APP
 INSTALLED_APPS_RESTFUL = [
     'account',
+    'app',
 ]
 
 # 默认APP， 不具备RESTFUL支持的APP
@@ -54,6 +55,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',  # 跨域
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -131,6 +133,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static")
+]
+
+MEDIA = '/media'
+# 搜索引擎 媒体资源文件夹名称，非路径
+
+MEDIA_URL = '{}/'.format(MEDIA)
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 '''
 域增加忽略
@@ -195,7 +206,6 @@ PAGE_SIZE = 40
 DEFAULT_LIMIT = PAGE_SIZE
 
 JWT_AUTH = {
-    # 指明token的有效期
     'JWT_EXPIRATION_DELTA': datetime.timedelta(days=1),
     'JWT_RESPONSE_PAYLOAD_HANDLER': 'huaxiaRestful.utils.jwt.jwt_response_payload_handler',
     'JWT_PAYLOAD_HANDLER': 'huaxiaRestful.utils.jwt.jwt_payload_handlers',

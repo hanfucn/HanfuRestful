@@ -14,6 +14,7 @@ Django = "==2.1.5"
 Markdown = "==3.0.1"
 djangorestframework-jwt = "*"
 django-haystack = "*"
+pillow = "*"
 
 [requires]
 python_version = "3.7"
