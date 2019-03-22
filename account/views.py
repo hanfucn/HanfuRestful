@@ -8,11 +8,11 @@ from rest_framework.viewsets import GenericViewSet, ViewSet, ModelViewSet
 from rest_framework_jwt.serializers import JSONWebTokenSerializer, VerifyJSONWebTokenSerializer, \
     RefreshJSONWebTokenSerializer
 from rest_framework_jwt.settings import api_settings
-from rest_framework_jwt.utils import jwt_response_payload_handler
 
 from account.models import User
 from account.serializer import RegisterSerializer
 
+jwt_response_payload_handler = api_settings.JWT_RESPONSE_PAYLOAD_HANDLER
 
 class JSONWebTokenAPIView(object):
     """
