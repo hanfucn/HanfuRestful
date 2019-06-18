@@ -1,5 +1,5 @@
 - <b>简体中文</b>
-- [English](https://github.com/printempw/blessing-skin-server/blob/master/README_EN.md)
+- [English]()
 
 <p align="center"><img src="https://img.blessing.studio/images/2017/01/01/bs-logo.png"></p>
 
@@ -12,57 +12,49 @@
 <a href="https://twitter.com/printempw"><img src="https://img.shields.io/twitter/follow/printempw.svg?style=social&label=Follow" alt="Twitter Follow"></a>
 </p>
 
-优雅的开源 Minecraft 皮肤站，现在，回应您的等待。
+优雅的开源 Hanfu 社区平台，现在，回应您的等待。
 
-Blessing Skin 是一款能让您上传、管理和分享您的 Minecraft 皮肤和披风的 Web 应用程序。与修改游戏材质包不同的是，所有人都能在游戏中看到各自的皮肤和披风（当然，前提是玩家们要使用同一个皮肤站）。
+Hanfu 是一款能让您上传、发布和分享您的 综合性的 Web 应用程序。与普通社区（论坛）不同的是，拥有微信小程序，移动APP版本。还包含了微信公众号，手机网站，于QQ群助手结合一体的 综合性的 Web 应用程序（当然，您可以只选用一个应用程序哦）。
 
-Blessing Skin 是一个开源的 PHP 项目，这意味着您可以自由地在您的服务器上部署它。这里有一个 [演示站点](http://skin.prinzeugen.net/)。
+Hanfu 是一个开源的 Python 项目，这意味着您可以自由地在您的服务器上部署它。这里有一个 [演示站点](http://www.vdjango.net/)。
 
 特性
 -----------
-- 完整实现了一个皮肤站该有的功能
-- 支持单用户多个角色
-- 通过皮肤库来分享您的皮肤和披风！
+- 完整实现了综合性平台应有的功能
+- 支持多平台对接[微信小程序|移动APP|商城系统|QQ群助手|微信公众号]
+- 通过Hanfu综合性平台实现整套系统。分享，图虫，商城，资讯等
 - 易于使用
-    - 可视化的用户、角色、材质管理页面
+    - 可视化的统一后台管理页面[一拖五轻松对接]
     - 详细的站点配置页面
     - 多处 UI/UX 优化只为更好的用户体验
 - 安全
     - 支持多种安全密码 Hash 算法
-    - 注册可要求 Email 验证（插件）
-    - 防止恶意请求的积分系统
+    - 注册可要求 Email 验证
+    - Token 令牌安全机制
 - 强大的可扩展性
     - 多种多样的插件
-    - 支持与 Authme/Discuz 等程序的用户数据对接
-    - 支持自定义 Yggdrasil API 外置登录系统
 
 环境要求
 -----------
-Blessing Skin 对您的服务器有一定的要求。_在大多数情况下，下列所需的 PHP 扩展已经开启。_
+Hanfu 社区 对您的服务器有一定的要求。_在大多数情况下，下列所需的 PHP 扩展已经开启。_
 
 - 一台支持 URL 重写的主机，Nginx、Apache 或 IIS
-- **PHP >= 5.5.9** [（服务器不支持？）](https://github.com/printempw/blessing-skin-server/wiki/%E7%89%88%E6%9C%AC%E8%AF%B4%E6%98%8E)
-- 安装并启用如下 PHP 扩展：
-    - OpenSSL
-    - PDO
-    - Mbstring
-    - Tokenizer
-    - GD
+- **Python >= 3.6**
+- 安装 requeirement.txt 下 pip 包：
 
-如果你使用的是 PHP 7.2，请先阅读 [Wiki - 在 PHP 7.2 上运行](https://github.com/printempw/blessing-skin-server/wiki/%E5%9C%A8-PHP-7.2-%E4%B8%8A%E8%BF%90%E8%A1%8C)。
 
 快速使用
 -----------
-请参阅 [Wiki - 快速安装向导](https://github.com/printempw/blessing-skin-server/wiki/%E5%BF%AB%E9%80%9F%E5%AE%89%E8%A3%85%E5%90%91%E5%AF%BC)。
+请参阅 [Wiki - 快速安装向导]()。
 
-![screenshot](https://img.blessing.studio/images/2017/07/29/2017-06-16_15.54.16.png)
+图
 
 插件系统
 ------------
 
-Blessing Skin 提供了强大的插件系统，您可以通过添加多种多样的插件来为您的皮肤站添加功能。
+Hanfu 社区 提供了强大的插件系统，您可以通过添加多种多样的插件来为您的皮肤站添加功能。
 
-详情请参阅 [Wiki - 插件系统介绍](https://github.com/printempw/blessing-skin-server/wiki/%E6%8F%92%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D)。
+详情请参阅 [Wiki - 插件系统介绍]()。
 
 自行构建
 ------------
@@ -73,36 +65,38 @@ Blessing Skin 提供了强大的插件系统，您可以通过添加多种多样
 从 Git 上 clone 源码并安装依赖:
 
 ```bash
-$ git clone https://github.com/printempw/blessing-skin-server.git
-$ composer install
-$ yarn install
+$ git clone git@github.com:ShszCraft/huaxiaRestful.git
+$ python manage.py makemigrations
+$ python manage.py migrate
+$ python manage.py runserver
 ```
 
 运行自动化测试（可跳过）：
 
 ```bash
-$ yarn test
-$ ./vendor/bin/phpunit
-```
-
-构建前端代码！
-
-```bash
-$ yarn run build
+$ python manage.py test
 ```
 
 接下来请参考「快速安装向导」进行后续安装。
 
 问题报告
 ------------
-请参阅 [Wiki - 报告问题的正确姿势](https://github.com/printempw/blessing-skin-server/wiki/%E6%8A%A5%E5%91%8A%E9%97%AE%E9%A2%98%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF)。
+请参阅 [Wiki - 报告问题的正确姿势]()。
 
 版权
 ------------
-Copyright 2016-2018 printempw and contributors.
+Copyright (C) 2019 张珏敏.
 
-Blessing Skin 是基于 GNU General Public License version 3 开放源代码的自由软件，你可以遵照 GPLv3 协议来修改或重新发布本程序。
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
-**例外情况**：任何为 Blessing Skin 皮肤站程序开发、调用了 Blessing Skin 插件 API 的插件程序，在未使用 Blessing Skin 程序源代码的情况下，无须采用 GPLv3 协议，也不强制要求开放插件源代码。
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
 
-程序原作者为 [@printempw](https://blessing.studio/)，转载请注明。
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
