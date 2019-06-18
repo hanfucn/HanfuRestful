@@ -2,14 +2,15 @@
 - [English]()
 
 
-<p align="center">
-<a href="https://travis-ci.org/ShszCraft/huaxiaRestful"><img src="https://travis-ci.org/ShszCraft/huaxiaRestful.svg?branch=master" alt="Travis Building Status"></a>
+
+    <a href="https://travis-ci.org/ShszCraft/huaxiaRestful"><img src="https://travis-ci.org/ShszCraft/huaxiaRestful.svg?branch=master" alt="Travis Building Status"></a>
 
 <a href="https://github.com/ShszCraft/huaxiaRestful/releases"><img src="https://poser.pugx.org/printempw/blessing-skin-server/version" alt="Latest Stable Version"></a>
+
 <img src="https://img.shields.io/packagist/v/0/0.svg" alt="PHP 5.5.9+">
 <img src="https://poser.pugx.org/printempw/blessing-skin-server/license" alt="License">
 
-</p>
+
 
 优雅的开源 Hanfu 社区平台，现在，回应您的等待。
 
