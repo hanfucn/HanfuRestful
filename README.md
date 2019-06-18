@@ -87,6 +87,10 @@ $ python manage.py test
 ------------
 Copyright (C) 2019 张珏敏.
 
+>>>
+Hanfu 是基于 GNU General Public License version 3 开放源代码的自由软件，你可以遵照 GPLv3 协议来修改或重新发布本程序。
+>>>
+
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
