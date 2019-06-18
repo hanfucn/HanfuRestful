@@ -1,48 +1,108 @@
-# huaxia 后端接口
+- <b>简体中文</b>
+- [English](https://github.com/printempw/blessing-skin-server/blob/master/README_EN.md)
 
-[需求文档](/.remarks/demand.md)
+<p align="center"><img src="https://img.blessing.studio/images/2017/01/01/bs-logo.png"></p>
 
-> master 分支： 项目稳定，满足发布需求合并分支
+<p align="center">
+<a href="https://travis-ci.org/printempw/blessing-skin-server"><img src="https://api.travis-ci.org/printempw/blessing-skin-server.svg?branch=master" alt="Travis Building Status"></a>
+<a href="https://codecov.io/gh/printempw/blessing-skin-server"><img src="https://codecov.io/gh/printempw/blessing-skin-server/branch/master/graph/badge.svg" alt="Codecov" /></a>
+<a href="https://github.com/printempw/blessing-skin-server/releases"><img src="https://poser.pugx.org/printempw/blessing-skin-server/version" alt="Latest Stable Version"></a>
+<img src="https://img.shields.io/badge/PHP-5.5.9+-orange.svg" alt="PHP 5.5.9+">
+<img src="https://poser.pugx.org/printempw/blessing-skin-server/license" alt="License">
+<a href="https://twitter.com/printempw"><img src="https://img.shields.io/twitter/follow/printempw.svg?style=social&label=Follow" alt="Twitter Follow"></a>
+</p>
 
-> dev 分支： 所有操作在这个分支上进行
+优雅的开源 Minecraft 皮肤站，现在，回应您的等待。
 
-*Fork项目*
+Blessing Skin 是一款能让您上传、管理和分享您的 Minecraft 皮肤和披风的 Web 应用程序。与修改游戏材质包不同的是，所有人都能在游戏中看到各自的皮肤和披风（当然，前提是玩家们要使用同一个皮肤站）。
 
-![Fork](/.remarks/Fork.png)
+Blessing Skin 是一个开源的 PHP 项目，这意味着您可以自由地在您的服务器上部署它。这里有一个 [演示站点](http://skin.prinzeugen.net/)。
 
-*然后回到自己的仓库，选择SSH，如图*
+特性
+-----------
+- 完整实现了一个皮肤站该有的功能
+- 支持单用户多个角色
+- 通过皮肤库来分享您的皮肤和披风！
+- 易于使用
+    - 可视化的用户、角色、材质管理页面
+    - 详细的站点配置页面
+    - 多处 UI/UX 优化只为更好的用户体验
+- 安全
+    - 支持多种安全密码 Hash 算法
+    - 注册可要求 Email 验证（插件）
+    - 防止恶意请求的积分系统
+- 强大的可扩展性
+    - 多种多样的插件
+    - 支持与 Authme/Discuz 等程序的用户数据对接
+    - 支持自定义 Yggdrasil API 外置登录系统
 
-![Clone](/.remarks/Clone.png)
+环境要求
+-----------
+Blessing Skin 对您的服务器有一定的要求。_在大多数情况下，下列所需的 PHP 扩展已经开启。_
 
-*将代码克隆到本地*
+- 一台支持 URL 重写的主机，Nginx、Apache 或 IIS
+- **PHP >= 5.5.9** [（服务器不支持？）](https://github.com/printempw/blessing-skin-server/wiki/%E7%89%88%E6%9C%AC%E8%AF%B4%E6%98%8E)
+- 安装并启用如下 PHP 扩展：
+    - OpenSSL
+    - PDO
+    - Mbstring
+    - Tokenizer
+    - GD
 
+如果你使用的是 PHP 7.2，请先阅读 [Wiki - 在 PHP 7.2 上运行](https://github.com/printempw/blessing-skin-server/wiki/%E5%9C%A8-PHP-7.2-%E4%B8%8A%E8%BF%90%E8%A1%8C)。
+
+快速使用
+-----------
+请参阅 [Wiki - 快速安装向导](https://github.com/printempw/blessing-skin-server/wiki/%E5%BF%AB%E9%80%9F%E5%AE%89%E8%A3%85%E5%90%91%E5%AF%BC)。
+
+![screenshot](https://img.blessing.studio/images/2017/07/29/2017-06-16_15.54.16.png)
+
+插件系统
+------------
+
+Blessing Skin 提供了强大的插件系统，您可以通过添加多种多样的插件来为您的皮肤站添加功能。
+
+详情请参阅 [Wiki - 插件系统介绍](https://github.com/printempw/blessing-skin-server/wiki/%E6%8F%92%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D)。
+
+自行构建
+------------
+如果你想为此项目作贡献，或者抢先尝试未发布的新功能，你应该先用 Git 上的代码部署。
+
+**不推荐不熟悉 shell 操作以及不想折腾的用户使用。**
+
+从 Git 上 clone 源码并安装依赖:
+
+```bash
+$ git clone https://github.com/printempw/blessing-skin-server.git
+$ composer install
+$ yarn install
 ```
-git config --global user.name "名称·"
-git config --global user.email "邮箱地址"
 
-# 请自行配置 .ssh 到GitHub， 否则克隆失败
- 
-git clone git@github.com:ShszCraft/huaxiaRestful.git
- 
-cd huaxiaRestful 
-git add .
-git commit -m "add Fork"
-git push
+运行自动化测试（可跳过）：
+
+```bash
+$ yarn test
+$ ./vendor/bin/phpunit
 ```
 
-*Pull requests提交代码到dev分支*
+构建前端代码！
 
-![Pull requests](/.remarks/Pull.png)
+```bash
+$ yarn run build
+```
 
-![OpenPull](/.remarks/OpenPull.png)
+接下来请参考「快速安装向导」进行后续安装。
 
-*之后我这边通过一下，你提交的分支就合并到dev分支上了。 我写代码会用 job分支，所以不要克隆job， 请克隆dev分支*
-*跟着dev分支走*
+问题报告
+------------
+请参阅 [Wiki - 报告问题的正确姿势](https://github.com/printempw/blessing-skin-server/wiki/%E6%8A%A5%E5%91%8A%E9%97%AE%E9%A2%98%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF)。
 
-![Merge](/.remarks/Merge.png)
- 
+版权
+------------
+Copyright 2016-2018 printempw and contributors.
 
+Blessing Skin 是基于 GNU General Public License version 3 开放源代码的自由软件，你可以遵照 GPLv3 协议来修改或重新发布本程序。
 
-[关于如何Fork，如何将代码推送到我这边来。请看这里](https://www.cnblogs.com/southday/p/10010876.html)
+**例外情况**：任何为 Blessing Skin 皮肤站程序开发、调用了 Blessing Skin 插件 API 的插件程序，在未使用 Blessing Skin 程序源代码的情况下，无须采用 GPLv3 协议，也不强制要求开放插件源代码。
 
-
+程序原作者为 [@printempw](https://blessing.studio/)，转载请注明。
