@@ -7,3 +7,4 @@ djangorestframework==3.9.1
 markdown==3.0.1
 pyjwt==1.7.1
 pytz==2018.9
+Pillow
