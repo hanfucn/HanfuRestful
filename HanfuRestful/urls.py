@@ -23,7 +23,7 @@ from django.urls import path, include
 from rest_framework import mixins, views
 from rest_framework.response import Response
 
-from huaxiaRestful import settings
+from . import settings
 
 from django.views.static import serve
 
