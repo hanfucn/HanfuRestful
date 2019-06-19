@@ -6,7 +6,7 @@
     <img src="https://travis-ci.org/ShszCraft/huaxiaRestful.svg?branch=master" alt="Travis Building Status">
 </p>
 
-优雅的开源 Hanfu 社区平台，现在，回应您的等待。
+优雅的开源 Hanfu 社区，现在，回应您的等待。
 
 Hanfu 是一款能让您上传、发布和分享您的 综合性的 Web 应用程序。与普通社区（论坛）不同的是，拥有微信小程序，移动APP版本。还包含了微信公众号，手机网站，于QQ群助手结合一体的 综合性的 Web 应用程序（当然，您可以只选用一个应用程序哦）。
 
