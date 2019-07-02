@@ -71,7 +71,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'huaxiaRestful.urls'
+ROOT_URLCONF = 'HanfuRestful.urls'
 
 TEMPLATES = [
     {
@@ -89,7 +89,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'huaxiaRestful.wsgi.application'
+WSGI_APPLICATION = 'HanfuRestful.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
@@ -215,8 +215,8 @@ DEFAULT_LIMIT = PAGE_SIZE
 
 JWT_AUTH = {
     'JWT_EXPIRATION_DELTA': datetime.timedelta(days=1),
-    'JWT_RESPONSE_PAYLOAD_HANDLER': 'huaxiaRestful.utils.jwt.jwt_response_payload_handler',
-    'JWT_PAYLOAD_HANDLER': 'huaxiaRestful.utils.jwt.jwt_payload_handlers',
+    'JWT_RESPONSE_PAYLOAD_HANDLER': 'HanfuRestful.utils.jwt.jwt_response_payload_handler',
+    'JWT_PAYLOAD_HANDLER': 'HanfuRestful.utils.jwt.jwt_payload_handlers',
     'JWT_ENCODE_HANDLER': 'rest_framework_jwt.utils.jwt_encode_handler',
     'JWT_DECODE_HANDLER': 'rest_framework_jwt.utils.jwt_decode_handler',
     'JWT_PAYLOAD_GET_USER_ID_HANDLER': 'rest_framework_jwt.utils.jwt_get_user_id_from_payload_handler',
