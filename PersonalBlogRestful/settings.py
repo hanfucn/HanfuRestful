@@ -32,7 +32,7 @@ SECRET_KEY = 'bcy#=8k=$y20ywv^m25rf+s+)hlv3@w7f&chkmj&1n3i)kv!5('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 AUTH_USER_MODEL = 'account.User'
 
@@ -71,7 +71,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'HanfuRestful.urls'
+ROOT_URLCONF = 'PersonalBlogRestful.urls'
 
 TEMPLATES = [
     {
@@ -89,7 +89,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'HanfuRestful.wsgi.application'
+WSGI_APPLICATION = 'PersonalBlogRestful.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
@@ -157,7 +157,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ORIGIN_WHITELIST = (
-    '*'
 )
 CORS_ALLOW_METHODS = (
     'DELETE',
@@ -215,8 +214,8 @@ DEFAULT_LIMIT = PAGE_SIZE
 
 JWT_AUTH = {
     'JWT_EXPIRATION_DELTA': datetime.timedelta(days=1),
-    'JWT_RESPONSE_PAYLOAD_HANDLER': 'HanfuRestful.utils.jwt.jwt_response_payload_handler',
-    'JWT_PAYLOAD_HANDLER': 'HanfuRestful.utils.jwt.jwt_payload_handlers',
+    'JWT_RESPONSE_PAYLOAD_HANDLER': 'PersonalBlogRestful.utils.jwt.jwt_response_payload_handler',
+    'JWT_PAYLOAD_HANDLER': 'PersonalBlogRestful.utils.jwt.jwt_payload_handlers',
     'JWT_ENCODE_HANDLER': 'rest_framework_jwt.utils.jwt_encode_handler',
     'JWT_DECODE_HANDLER': 'rest_framework_jwt.utils.jwt_decode_handler',
     'JWT_PAYLOAD_GET_USER_ID_HANDLER': 'rest_framework_jwt.utils.jwt_get_user_id_from_payload_handler',
