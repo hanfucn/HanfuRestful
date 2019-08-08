@@ -6,9 +6,9 @@
 </p>
 
 
-* [Hanfu 社区 *](https://github.com/ShszCraft/HanfuForum)
-* [Hanfu 移动端](https://github.com/ShszCraft/HanfuApp)
-* [Hanfu 后端 *](https://github.com/ShszCraft/HanfuRestful/)
+* [Hanfu 社区 *](https://github.com/hanfucn/HanfuForum)
+* [Hanfu 移动端](https://github.com/hanfucn/HanfuApp)
+* [Hanfu 后端 *](https://github.com/hanfucn/HanfuRestful/)
 
 
 
@@ -54,7 +54,7 @@ Hanfu 社区 提供了强大的插件系统，您可以通过添加多种多样�
 从 Git 上 clone 源码并安装依赖:
 
 ```bash
-$ git clone git@github.com:ShszCraft/huaxiaRestful.git
+$ git clone git@github.com:hanfucn/huaxiaRestful.git
 $ python manage.py makemigrations
 $ python manage.py migrate
 $ python manage.py runserver
@@ -74,7 +74,7 @@ $ python manage.py test
 
 版权
 ------------
-Copyright (C) 2019 张珏敏.
+Copyright (C) 2019 Hanfucn.
 
 >>>
 Hanfu 是基于 GNU General Public License version 3 开放源代码的自由软件，你可以遵照 GPLv3 协议来修改或重新发布本程序。
