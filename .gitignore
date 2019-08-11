@@ -15,3 +15,10 @@ selenium-debug.log
 *.ntvs*
 *.njsproj
 *.sln
+
+venv/
+**/__pycache__/*
+# 没必要记录migrations文件,只需根据Model去make migrations获取最新版即可
+**/migrations/*
+# 但用此方式可保留migrations目录
+!__init__.py

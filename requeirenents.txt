@@ -1,6 +1,0 @@
-Django==2.1.5
-django-cors-headers==2.4.0
-django-filter==2.0.0
-djangorestframework==3.9.1
-Markdown==3.0.1
-pytz==2018.9
