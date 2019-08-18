@@ -26,9 +26,25 @@ class ArticleSerializer(serializers.ModelSerializer):
     '''
     序列化文章模型
     '''
+    image = serializers.SerializerMethodField(help_text='论坛文章 Image List')
+
+    def get_image(self, instance):
+        return ArticleImageSerializer(instance.articleimage_set, many=True).data
 
     class Meta:
         model = models.Article
+        fields = '__all__'
+
+    pass
+
+
+class ArticleImageSerializer(serializers.ModelSerializer):
+    '''
+    论坛文章 Image List
+    '''
+
+    class Meta:
+        model = models.ArticleImage
         fields = '__all__'
 
     pass

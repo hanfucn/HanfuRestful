@@ -27,8 +27,22 @@ from . import serializer, models
 # Create your views here.
 
 class ArticleView(viewsets.ModelViewSet):
+    '''
+    论坛文章
+    '''
     pagination_class = Pagination
     serializer_class = serializer.ArticleSerializer
     queryset = models.Article.objects.filter()
     filterset_fields = ['name', 'text', 'verify', 'browse', 'user']
+    pass
+
+
+class ArticleImageView(viewsets.ModelViewSet):
+    '''
+    论坛文章 Image List
+    '''
+    pagination_class = Pagination
+    serializer_class = serializer.ArticleImageSerializer
+    queryset = models.ArticleImage.objects.filter()
+    # filterset_fields = ['name', 'text', 'verify', 'browse', 'user']
     pass

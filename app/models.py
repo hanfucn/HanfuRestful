@@ -1,22 +1,3 @@
-'''
-
-Copyright (C) 2019 张珏敏.
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-'''
-
 from django.db import models
 
 # Create your models here.
@@ -50,12 +31,43 @@ class Article(models.Model):
 
     name = models.CharField(default='C', max_length=255, help_text='记录论坛文章的标题', verbose_name='标题')
     text = models.TextField(default='C', help_text='记录论坛文章内容', verbose_name='内容')
-    images = models.ImageField(help_text='记录文章封面图', verbose_name='封面图', upload_to=get_upload_to, null=True)
+    images = models.ImageField(help_text='记录文章封面图 DELETE', verbose_name='封面图', upload_to=get_upload_to, null=True)
     verify = models.BooleanField(default=False, help_text='记录文章发布后[是否需要|是否完成]审核', verbose_name='审核')
     create_date = models.DateTimeField(auto_now_add=True, help_text='记录文章创建时间', verbose_name='创建时间')
     change_date = models.DateTimeField(auto_now=True, help_text='记录文章更新时间', verbose_name='更新时间')
     browse = models.IntegerField(default=0, help_text='记录文章浏览量', verbose_name='浏览量')
     user = models.ForeignKey(User, help_text='记录文章创建作者', verbose_name='创建者', on_delete=models.SET_NULL, null=True)
+
+
+class ArticleImage(models.Model):
+    '''
+    论坛文章 Image List
+    '''
+
+    def get_upload_to(self, filename):
+        import os
+        import time
+        from django.utils import timezone
+
+        now = timezone.now()
+        if not timezone.is_naive(now):
+            now = timezone.make_naive(now, timezone.utc)
+
+        filename = '{}.{}'.format(
+            str(now).split('.')[0],
+            filename.split('.')[-1]
+        )
+        path = os.path.join(
+            "article-image",
+            str(time.mktime(now.timetuple())).split('.')[0],
+            filename
+        )
+        return path
+
+    file = models.ImageField(upload_to=get_upload_to, help_text='记录文章图')
+    create_date = models.DateTimeField(auto_now_add=True, help_text='Update 时间', verbose_name='Update 时间')
+    key = models.ForeignKey(Article, on_delete=models.CASCADE, null=True, blank=True)
+    pass
 
 
 class Activity_Attend(models.Model):

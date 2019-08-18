@@ -24,6 +24,7 @@ from . import views
 
 router = routers.DefaultRouter()
 router.register('article', views.ArticleView, base_name='article')
+router.register('article-image-update', views.ArticleImageView, base_name='article-image-update')
 
 urlpatterns = [
     path('', include(router.urls))
