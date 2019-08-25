@@ -34,6 +34,17 @@ class ArticleView(viewsets.ModelViewSet):
     serializer_class = serializer.ArticleSerializer
     queryset = models.Article.objects.filter()
     filterset_fields = ['name', 'text', 'verify', 'browse', 'user']
+
+    def get_serializer(self, *args, **kwargs):
+        """
+        Return the serializer instance that should be used for validating and
+        deserializing input, and for serializing output.
+        """
+        serializer_class = self.get_serializer_class()
+        kwargs['context'] = self.get_serializer_context()
+        print('context', kwargs['context'])
+        return serializer_class(*args, **kwargs)
+
     pass
 
 
@@ -45,4 +56,5 @@ class ArticleImageView(viewsets.ModelViewSet):
     serializer_class = serializer.ArticleImageSerializer
     queryset = models.ArticleImage.objects.filter()
     # filterset_fields = ['name', 'text', 'verify', 'browse', 'user']
+
     pass

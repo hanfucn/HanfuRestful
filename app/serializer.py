@@ -29,7 +29,8 @@ class ArticleSerializer(serializers.ModelSerializer):
     image = serializers.SerializerMethodField(help_text='论坛文章 Image List')
 
     def get_image(self, instance):
-        return ArticleImageSerializer(instance.articleimage_set, many=True).data
+        request = self.context.get('request', None)
+        return ArticleImageSerializer(instance.articleimage_set, many=True, context={'request': request}).data
 
     class Meta:
         model = models.Article

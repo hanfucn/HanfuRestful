@@ -29,13 +29,17 @@ class Article(models.Model):
         )
         return path
 
-    name = models.CharField(default='C', max_length=255, help_text='记录论坛文章的标题', verbose_name='标题')
-    text = models.TextField(default='C', help_text='记录论坛文章内容', verbose_name='内容')
+    name = models.CharField(default='C', max_length=255, help_text='记录论坛文章的标题', verbose_name='标题', null=True)
+    text = models.TextField(default='C', help_text='记录论坛文章内容', verbose_name='内容', null=True)
     images = models.ImageField(help_text='记录文章封面图 DELETE', verbose_name='封面图', upload_to=get_upload_to, null=True)
     verify = models.BooleanField(default=False, help_text='记录文章发布后[是否需要|是否完成]审核', verbose_name='审核')
     create_date = models.DateTimeField(auto_now_add=True, help_text='记录文章创建时间', verbose_name='创建时间')
     change_date = models.DateTimeField(auto_now=True, help_text='记录文章更新时间', verbose_name='更新时间')
     browse = models.IntegerField(default=0, help_text='记录文章浏览量', verbose_name='浏览量')
+    status = models.IntegerField(default=1, choices=(
+        (1, '未完善'),
+        (0, '完善'),
+    ), help_text='未完善文章，未完善文章不展示')
     user = models.ForeignKey(User, help_text='记录文章创建作者', verbose_name='创建者', on_delete=models.SET_NULL, null=True)
 
 
@@ -67,6 +71,7 @@ class ArticleImage(models.Model):
     file = models.ImageField(upload_to=get_upload_to, help_text='记录文章图')
     create_date = models.DateTimeField(auto_now_add=True, help_text='Update 时间', verbose_name='Update 时间')
     key = models.ForeignKey(Article, on_delete=models.CASCADE, null=True, blank=True)
+
     pass
 
 
@@ -119,3 +124,6 @@ class Activity(models.Model):
                                          help_text='记录活动参加人员', verbose_name='报名人员')
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='activity_user',
                              help_text='记录活动创建作者', verbose_name='创建者')
+
+
+

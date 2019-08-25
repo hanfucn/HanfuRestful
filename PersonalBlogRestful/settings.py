@@ -32,6 +32,8 @@ SECRET_KEY = 'bcy#=8k=$y20ywv^m25rf+s+)hlv3@w7f&chkmj&1n3i)kv!5('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+UPLOADED_FILES_USE_URL = 'http://127.0.0.2:8000'
+
 ALLOWED_HOSTS = ['*']
 
 AUTH_USER_MODEL = 'account.User'
