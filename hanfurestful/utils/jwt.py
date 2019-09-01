@@ -58,3 +58,10 @@ def jwt_response_payload_handler(token, user=None, request=None):
         'user': UserSerializer(user).data,
         'token': token,
     }
+
+def jwt_get_username_from_payload_handler(payload):
+    """
+    Override this function if username is formatted differently in payload
+    """
+    print('user', payload)
+    return payload.get('username')

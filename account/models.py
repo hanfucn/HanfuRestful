@@ -27,6 +27,10 @@ from django.utils.translation import gettext_lazy as _
 class User(AbstractUser):
     email = models.EmailField(_('email address'), unique=True, blank=True)
 
+    def save(self, *args, **kwargs):
+        if not self.username: self.username = self.email.split('@')[0]
+        super(User, self).save(*args, **kwargs)
+
     class Meta(AbstractUser.Meta):
         ordering = ['-date_joined']
         pass

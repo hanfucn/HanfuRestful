@@ -20,7 +20,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 from django.shortcuts import render
 from rest_framework import viewsets
 
-from PersonalBlogRestful.utils.LimitOffsetPagination import Pagination
+from hanfurestful.utils.LimitOffsetPagination import Pagination
 from . import serializer, models
 
 
