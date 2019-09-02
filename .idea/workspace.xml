@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="360e087b-b1db-482b-a967-9bd6a46b5a7a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/hanfurestful/utils/authentication.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PersonalBlogRestful/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/hanfurestful/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PersonalBlogRestful/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/hanfurestful/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PersonalBlogRestful/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/hanfurestful/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PersonalBlogRestful/utils/LimitOffsetPagination.py" beforeDir="false" afterPath="$PROJECT_DIR$/hanfurestful/utils/LimitOffsetPagination.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PersonalBlogRestful/utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/hanfurestful/utils/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PersonalBlogRestful/utils/jwt.py" beforeDir="false" afterPath="$PROJECT_DIR$/hanfurestful/utils/jwt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PersonalBlogRestful/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/hanfurestful/wsgi.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/account/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/serializer.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -152,7 +143,7 @@
       <workItem from="1566706307848" duration="698000" />
       <workItem from="1566741937687" duration="6943000" />
       <workItem from="1567261527888" duration="236000" />
-      <workItem from="1567304884168" duration="4040000" />
+      <workItem from="1567304884168" duration="4632000" />
     </task>
     <servers />
   </component>
