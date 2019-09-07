@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="360e087b-b1db-482b-a967-9bd6a46b5a7a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/serializer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requeirement.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requeirement.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -144,7 +142,7 @@
       <workItem from="1566741937687" duration="6943000" />
       <workItem from="1567261527888" duration="236000" />
       <workItem from="1567304884168" duration="4632000" />
-      <workItem from="1567841127286" duration="5494000" />
+      <workItem from="1567841127286" duration="5718000" />
     </task>
     <servers />
   </component>
