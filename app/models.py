@@ -29,8 +29,8 @@ class Article(models.Model):
         )
         return path
 
-    name = models.CharField(default='C', max_length=255, help_text='记录论坛文章的标题', verbose_name='标题', null=True)
-    text = models.TextField(default='C', help_text='记录论坛文章内容', verbose_name='内容', null=True)
+    name = models.CharField(default='C', max_length=255, help_text='记录文章的标题', verbose_name='标题', null=True)
+    text = models.TextField(default='C', help_text='记录文章内容', verbose_name='内容', null=True)
     images = models.ImageField(help_text='记录文章封面图 DELETE', verbose_name='封面图', upload_to=get_upload_to, null=True)
     verify = models.BooleanField(default=False, help_text='记录文章发布后[是否需要|是否完成]审核', verbose_name='审核')
     create_date = models.DateTimeField(auto_now_add=True, help_text='记录文章创建时间', verbose_name='创建时间')
@@ -40,6 +40,7 @@ class Article(models.Model):
         (1, '未完善'),
         (0, '完善'),
     ), help_text='未完善文章，未完善文章不展示')
+    class_activity = models.ForeignKey('ClassActivity', on_delete=models.SET_NULL, null=True)
     user = models.ForeignKey(User, help_text='记录文章创建作者', verbose_name='创建者', on_delete=models.SET_NULL, null=True)
 
 
@@ -68,9 +69,10 @@ class ArticleImage(models.Model):
         )
         return path
 
-    file = models.ImageField(upload_to=get_upload_to, help_text='记录文章图')
+    name = models.CharField(max_length=50, help_text='标签')
+    file = models.ImageField(upload_to=get_upload_to, help_text='记录文章图', null=True)
     create_date = models.DateTimeField(auto_now_add=True, help_text='Update 时间', verbose_name='Update 时间')
-    key = models.ForeignKey(Article, on_delete=models.CASCADE, null=True, blank=True)
+    key = models.ForeignKey(Article, on_delete=models.CASCADE, related_name='article_image', null=True, blank=True)
 
     pass
 
@@ -126,4 +128,31 @@ class Activity(models.Model):
                              help_text='记录活动创建作者', verbose_name='创建者')
 
 
+class ClassActivity(models.Model):
+    '''
+    标签分类
+    '''
 
+    def get_upload_to(self, filename):
+        import os
+        import time
+        from django.utils import timezone
+
+        now = timezone.now()
+        if not timezone.is_naive(now):
+            now = timezone.make_naive(now, timezone.utc)
+
+        filename = '{}.{}'.format(
+            str(now).split('.')[0],
+            filename.split('.')[-1]
+        )
+        path = os.path.join(
+            "article-image",
+            str(time.mktime(now.timetuple())).split('.')[0],
+            filename
+        )
+        return path
+
+    name = models.CharField(max_length=50, help_text='标签')
+    image = models.ImageField(upload_to=get_upload_to, help_text='记录标签图', null=True)
+    pass

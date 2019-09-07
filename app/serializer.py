@@ -16,27 +16,20 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 '''
-
+from drf_writable_nested import WritableNestedModelSerializer
 from rest_framework import serializers
 
 from . import models
 
 
-class ArticleSerializer(serializers.ModelSerializer):
+class ClassActivitySerializer(serializers.ModelSerializer):
     '''
-    序列化文章模型
+    标签分类
     '''
-    image = serializers.SerializerMethodField(help_text='论坛文章 Image List')
-
-    def get_image(self, instance):
-        request = self.context.get('request', None)
-        return ArticleImageSerializer(instance.articleimage_set, many=True, context={'request': request}).data
 
     class Meta:
-        model = models.Article
+        model = models.ClassActivity
         fields = '__all__'
-
-    pass
 
 
 class ArticleImageSerializer(serializers.ModelSerializer):
@@ -47,5 +40,26 @@ class ArticleImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.ArticleImage
         fields = '__all__'
+
+    pass
+
+
+class ArticleSerializer(WritableNestedModelSerializer):
+    '''
+    序列化文章模型
+    '''
+    # image = serializers.SerializerMethodField(help_text='论坛文章 Image List')
+    #
+    # def get_image(self, instance):
+    #     request = self.context.get('request', None)
+    #     return ArticleImageSerializer(instance.articleimage_set, many=True, context={'request': request}).data
+
+    article_image = ArticleImageSerializer(many=True)
+    class_activity = ClassActivitySerializer(help_text='标签')
+
+    class Meta:
+        model = models.Article
+        fields = '__all__'
+        depth = 1
 
     pass
