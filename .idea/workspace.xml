@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="360e087b-b1db-482b-a967-9bd6a46b5a7a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/requeirement.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requeirement.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/serializer.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -114,8 +115,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Django server.HanfuRestful" />
       <item itemvalue="Python.manage" />
+      <item itemvalue="Django server.HanfuRestful" />
     </list>
     <recent_temporary>
       <list>

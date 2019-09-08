@@ -55,7 +55,7 @@ class ArticleSerializer(WritableNestedModelSerializer):
     #     return ArticleImageSerializer(instance.articleimage_set, many=True, context={'request': request}).data
 
     article_image = ArticleImageSerializer(many=True)
-    class_activity = ClassActivitySerializer(help_text='标签')
+    # class_activity = ClassActivitySerializer(help_text='标签')
 
     class Meta:
         model = models.Article
