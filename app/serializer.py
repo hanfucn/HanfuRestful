@@ -54,12 +54,17 @@ class ArticleSerializer(WritableNestedModelSerializer):
     #     request = self.context.get('request', None)
     #     return ArticleImageSerializer(instance.articleimage_set, many=True, context={'request': request}).data
 
+    annotation = serializers.SerializerMethodField()
     article_image = ArticleImageSerializer(many=True)
+
+    def get_annotation(self, instance):
+        return instance.text[:50]
+
     # class_activity = ClassActivitySerializer(help_text='标签')
 
     class Meta:
         model = models.Article
         fields = '__all__'
-        depth = 1
+        # depth = 1
 
     pass

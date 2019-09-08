@@ -40,7 +40,7 @@ class Article(models.Model):
         (1, '未完善'),
         (0, '完善'),
     ), help_text='未完善文章，未完善文章不展示')
-    class_activity = models.ForeignKey('ClassActivity', on_delete=models.SET_NULL, null=True)
+    class_activity = models.ForeignKey('ClassActivity', on_delete=models.CASCADE)
     user = models.ForeignKey(User, help_text='记录文章创建作者', verbose_name='创建者', on_delete=models.SET_NULL, null=True)
 
 

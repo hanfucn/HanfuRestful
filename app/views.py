@@ -33,7 +33,7 @@ class ArticleView(viewsets.ModelViewSet):
     pagination_class = Pagination
     serializer_class = serializer.ArticleSerializer
     queryset = models.Article.objects.filter()
-    filterset_fields = ['name', 'text', 'verify', 'browse', 'user']
+    filterset_fields = ['class_activity', 'name', 'text', 'verify', 'browse', 'user']
 
     def get_serializer(self, *args, **kwargs):
         """
@@ -50,11 +50,22 @@ class ArticleView(viewsets.ModelViewSet):
 
 class ArticleImageView(viewsets.ModelViewSet):
     '''
-    论坛文章 Image List
+    文章 Image List
     '''
     pagination_class = Pagination
     serializer_class = serializer.ArticleImageSerializer
     queryset = models.ArticleImage.objects.filter()
+    # filterset_fields = ['name', 'text', 'verify', 'browse', 'user']
+    pass
+
+
+class ClassActivityViewSet(viewsets.ModelViewSet):
+    '''
+    文章 Image List
+    '''
+    pagination_class = Pagination
+    serializer_class = serializer.ClassActivitySerializer
+    queryset = models.ClassActivity.objects.filter()
     # filterset_fields = ['name', 'text', 'verify', 'browse', 'user']
 
     pass
