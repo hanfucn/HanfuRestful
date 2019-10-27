@@ -20,6 +20,11 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 import datetime
 import os
 
+# 秀米settings
+APP_ID = 'Geethi7eexu1ging3tahzoe6ye7eek1p'
+TOKEN = 'Geethi7eexu1ging3tahzoe6ye7eek1p'
+SECRET = 'Geethi7eexu1ging3tahzoe6ye7eek1p'
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -44,6 +49,7 @@ AUTH_USER_MODEL = 'account.User'
 INSTALLED_APPS_RESTFUL = [
     'account',
     'app',
+    'xiumi'
 ]
 
 # 默认APP， 不具备RESTFUL支持的APP
