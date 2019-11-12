@@ -1,36 +1,53 @@
 # Create your views here.
-from rest_framework import viewsets, status
+from rest_framework import viewsets, status, mixins
 from rest_framework.response import Response
 
-from hanfurestful import settings
 from xiumi import serializer, models
-from xiumi.request_mixin import AccessTokenMixin
+from xiumi.base import GenericXiuMiAPIBase
 
 
-class AccessTokenViewSet(viewsets.ModelViewSet, AccessTokenMixin):
-    '''
+class AccessLoginViewSet(mixins.ListModelMixin, GenericXiuMiAPIBase):
+    """
+    用户登录入口
+    """
+    serializer_class = serializer.PartnerUserSerializer
+    queryset = models.PartnerUser.objects.filter()
+
+    def list(self, request, *args, **kwargs):
+        return Response({
+            'uri': self.get_authentication_login_uri()
+        })
+
+
+class AccessTokenViewSet(viewsets.ModelViewSet, GenericXiuMiAPIBase):
+    """
     获取access_token的接口
-    '''
+    """
     serializer_class = serializer.AccessTokenSerializer
     queryset = models.AccessToken.objects.filter()
 
-    def dispatch(self, request, *args, **kwargs):
-        self.nonce = self.get_nonce()
-        self.app_id = settings.APP_ID
-        self.secret = settings.SECRET
-        self.token = settings.TOKEN
-        return super(AccessTokenViewSet, self).dispatch(request, *args, **kwargs)
-
     def create(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=self.re_get())
+        serializer = self.get_serializer(data={
+            'access_token': self.set_authentication_token_create(),
+            'expires_in': 64800
+        })
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
         headers = self.get_success_headers(serializer.data)
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
 
-class SomePathForArticles(viewsets.ModelViewSet, AccessTokenMixin):
-    serializer_class = serializer.AccessTokenSerializer
-    queryset = models.AccessToken.objects.filter()
+class SomePathForArticlesViewSet(viewsets.ModelViewSet):  # SomePathArticles
+    """
+    接收图文内容的接口
+    """
+    serializer_class = serializer.SomePathForArticlesSerializer
+    queryset = models.SomePathForArticles.objects.filter()
 
-    pass
+
+class SomePathForImageViewSet(viewsets.ModelViewSet):  # SomePathArticles
+    """
+    接收图片文件的接口
+    """
+    serializer_class = serializer.SomePathForImageSerializer
+    queryset = models.SomePathForImage.objects.filter()

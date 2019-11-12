@@ -2,15 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="360e087b-b1db-482b-a967-9bd6a46b5a7a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/xiumi/mixins.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xiumi/request_mixin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xiumi/serializer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xiumi/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/HanfuRestful.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/HanfuRestful.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hanfurestful/utils/timezone.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wechat/event.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xiumi/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/hanfurestful/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/hanfurestful/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiumi/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiumi/mixins.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiumi/mixins.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiumi/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiumi/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiumi/request_mixin.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiumi/request_mixin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiumi/serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiumi/serializer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiumi/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiumi/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiumi/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiumi/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,9 +64,12 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/wechat" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/xiumi" />
     </key>
@@ -159,7 +166,14 @@
       <workItem from="1567957262304" duration="2095000" />
       <workItem from="1572079237406" duration="11023000" />
       <workItem from="1572097249555" duration="1633000" />
-      <workItem from="1572187831690" duration="2009000" />
+      <workItem from="1572187831690" duration="2185000" />
+      <workItem from="1572775771171" duration="1247000" />
+      <workItem from="1572784995312" duration="22605000" />
+      <workItem from="1573019112157" duration="5434000" />
+      <workItem from="1573106040520" duration="1773000" />
+      <workItem from="1573466596079" duration="1921000" />
+      <workItem from="1573557085141" duration="1419000" />
+      <workItem from="1573571082061" duration="877000" />
     </task>
     <servers />
   </component>

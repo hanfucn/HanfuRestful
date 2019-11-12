@@ -21,9 +21,20 @@ import datetime
 import os
 
 # 秀米settings
-APP_ID = 'Geethi7eexu1ging3tahzoe6ye7eek1p'
-TOKEN = 'Geethi7eexu1ging3tahzoe6ye7eek1p'
-SECRET = 'Geethi7eexu1ging3tahzoe6ye7eek1p'
+APP_ID = 'eix5xai3ohh2Ieg9aero9moojohb8po8'
+TOKEN = 'eeF7iNikeing8chiemohghooWi9cai2T'
+SECRET = 'ahn8thiShaeviethiPhiedooree7paif'
+
+'''
+微信授权
+'''
+WEI_XIN = {
+    'APP_ID': 'wx41e302230d440738',
+    'APP_SECRET': 'f76448f867921e04fcc1ed5a3bcd98bb',
+    'APP_TOKEN': '2ac863cbdd4d18c26e9005514f2ee0ce',
+    'APP_DES_KEY': 'U1d4He8Guib3jDYTD5GkndOsPRlp9MF6iWklNsooUgs',
+    'APP_REDIRECT_URI': 'http://authorize.21dodo.com/account/authorization-weixin-redirect/'
+}
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -49,7 +60,8 @@ AUTH_USER_MODEL = 'account.User'
 INSTALLED_APPS_RESTFUL = [
     'account',
     'app',
-    'xiumi'
+    'xiumi',
+    'wechat'
 ]
 
 # 默认APP， 不具备RESTFUL支持的APP

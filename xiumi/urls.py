@@ -23,7 +23,10 @@ from rest_framework import routers
 from . import views
 
 router = routers.DefaultRouter()
+router.register('access_login', views.AccessLoginViewSet, base_name='access_login')
 router.register('access_token', views.AccessTokenViewSet, base_name='access_token')
+router.register('text_image', views.SomePathForArticlesViewSet, base_name='text_image')
+router.register('file_image', views.SomePathForImageViewSet, base_name='file_image')
 
 urlpatterns = [
     path('', include(router.urls))
