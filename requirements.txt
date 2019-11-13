@@ -9,3 +9,6 @@ pyjwt==1.7.1
 pytz==2018.9
 Pillow
 drf-writable-nested
+requests
+wechatpy
+cryptography
