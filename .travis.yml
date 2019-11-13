@@ -12,7 +12,6 @@ env:
 
 before_install:
   - mysql -e 'CREATE DATABASE IF NOT EXISTS wechat_ticket;'
-  - mv configs.example.json configs.json
 
 install:
   - pip install -r requirements.txt
